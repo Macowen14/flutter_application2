@@ -1,8 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/sign_up.dart';
 import 'pages/login_screen.dart';
 
-void main() {
+void main () async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+        apiKey: 'AIzaSyCq3vyHLgKZY2fZBBLrgTv08jT4s5IDFbI',
+        appId: '1:10841637708:android:98453cf55572a4349305e9',
+        messagingSenderId: '10841637708',
+        projectId: 'flutterdemoapp-d8995',
+        storageBucket: 'flutterdemoapp-d8995.appspot.com'
+    )
+  );
   runApp(const MyApp());
 }
 
@@ -15,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: SignupScreen(),
+      home: LoginScreen(),
     );
   }
 }
